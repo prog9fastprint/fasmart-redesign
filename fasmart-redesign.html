@@ -2122,12 +2122,20 @@
         min-height: 100dvh;
         padding: 110px 0 56px;
       }
-      .hero-scrim {
+      html[data-theme="light"] .hero-scrim {
         background: linear-gradient(
           180deg,
-          rgba(10, 11, 15, 0.90) 0%,
-          rgba(10, 11, 15, 0.78) 45%,
-          rgba(10, 11, 15, 0.94) 100%
+          rgba(247, 247, 245, 0.88) 0%,
+          rgba(247, 247, 245, 0.76) 45%,
+          rgba(247, 247, 245, 0.88) 100%
+        );
+      }
+      html[data-theme="dark"] .hero-scrim {
+        background: linear-gradient(
+          180deg,
+          rgba(10, 11, 15, 0.88) 0%,
+          rgba(10, 11, 15, 0.76) 45%,
+          rgba(10, 11, 15, 0.88) 100%
         );
       }
       .hero-headline {
@@ -2466,7 +2474,7 @@
     <section class="hero-section" id="hero">
       <!-- Full-bleed background media with asymmetric directional scrim -->
       <div class="hero-bg-stage" aria-hidden="true">
-        <img id="heroBgImg" src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=2000&q=85" alt="" class="hero-bg-img" fetchpriority="high" loading="eager" width="2000" height="1333">
+        <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=2000&q=85" alt="" class="hero-bg-img" fetchpriority="high" loading="eager" width="2000" height="1333">
         <div class="hero-scrim"></div>
       </div>
 
@@ -3705,20 +3713,9 @@
     // -------------------------------------------------------------------------
     function initThemeController() {
       const toggleButtons = document.querySelectorAll('.theme-toggle-btn');
-      const heroBg = document.getElementById('heroBgImg');
-      const DAY_HERO_SRC = 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&w=2000&q=85';
-      const DUSK_HERO_SRC = 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=2000&q=85';
 
       function getEffectiveTheme() {
         return document.documentElement.getAttribute('data-theme') || 'light';
-      }
-
-      function syncHeroImage(theme) {
-        if (!heroBg) return;
-        const targetSrc = theme === 'dark' ? DUSK_HERO_SRC : DAY_HERO_SRC;
-        if (heroBg.getAttribute('src') !== targetSrc) {
-          heroBg.setAttribute('src', targetSrc);
-        }
       }
 
       function updateToggleButtons(theme) {
@@ -3736,7 +3733,6 @@
 
       function setTheme(theme) {
         document.documentElement.setAttribute('data-theme', theme);
-        syncHeroImage(theme);
         try {
           localStorage.setItem('fasmart-theme', theme);
         } catch (e) {
@@ -3747,7 +3743,6 @@
 
       // Initial sync with DOM state
       const currentTheme = getEffectiveTheme();
-      syncHeroImage(currentTheme);
       updateToggleButtons(currentTheme);
 
       // Bind click handlers to all theme toggle buttons
