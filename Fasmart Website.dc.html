@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    a { color: var(--ink); text-decoration: none; }
+    a:hover { color: var(--gold-dark); }
+    input, textarea { font-family: 'Inter', sans-serif; }
+    @keyframes fm-fade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fm-glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(217,158,22,0.55); } 50% { box-shadow: 0 0 0 8px rgba(217,158,22,0); } }
+  </style>
+</helmet>
+
+  <template id="__bundler_thumbnail" data-bg-color="#171717">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#171717"></rect>
+      <text x="600" y="440" font-family="Poppins, sans-serif" font-size="180" font-weight="800" fill="#D99E16" text-anchor="middle">Fasmart</text>
+    </svg>
+  </template>
+
+<div style="font-family:'Inter',sans-serif; background:var(--bg); color:var(--ink); min-height:100vh; overflow-x:clip; {{ themeVarsCss }}">
+
+  <header style="{{ headerStyle }}">
+    <div style="max-width:1200px; margin:0 auto; padding:16px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap">
+      <div onClick="{{ setHome }}" style="cursor:pointer; display:flex; align-items:center; gap:8px">
+        <img src="uploads/fasmart-icon-final.png" alt="Fasmart" style="height:36px; width:36px; object-fit:contain">
+        <div style="display:flex; align-items:baseline; gap:2px">
+          <span style="font-family: 'Poppins',sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.5px; color: #171717">Fasmart</span>
+          
+        </div>
+      </div>
+      <nav style="display:flex; align-items:center; gap:28px; flex-wrap:wrap">
+        <button onClick="{{ setHome }}" style="{{ navHomeStyle }}">Home</button>
+        <button onClick="{{ setLayanan }}" style="{{ navLayananStyle }}">Layanan</button>
+        <button onClick="{{ setTentang }}" style="{{ navTentangStyle }}">Tentang Kami</button>
+      </nav>
+      <a href="https://wa.me/6281234567890?text=Halo%20Fasmart%2C%20saya%20ingin%20konsultasi%20impor%20barang" target="_blank" style="color: #171717; font-weight: 700; font-size: 14px; padding: 11px 22px; border-radius: 999px; white-space: nowrap; display: inline-block; box-shadow: 0 2px 8px rgba(217,158,22,0.3); transition: transform 0.2s ease, box-shadow 0.2s ease; background-color: #D99E16" style-hover="transform:translateY(-2px); box-shadow:0 6px 18px rgba(217,158,22,0.55)">Konsultasi Gratis</a>
+    </div>
+  </header>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <div data-screen-label="Home">
+
+    <section style="max-width:1200px; margin:0 auto; padding:72px 24px 88px; display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center">
+      <div>
+        <h1 style="font-family: 'Poppins',sans-serif; font-size: 44px; font-weight: 800; line-height: 1.15; margin: 0 0 8px; letter-spacing: -1px; color: #D99E16"><span style="color: #171717">Belanja Barang di China</span> Anti Ribet &amp; Khawatir!</h1>
+        <div style="font-size: 15px; font-weight: 600; color: #172A46; margin: 16px 0 24px">Lffaf</div>
+        <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:32px">
+          <div style="display:flex; align-items:center; gap:10px; font-size:15px; color:var(--ink)"><span style="color:var(--gold-dark)">●</span> Impor via Udara &amp; Laut</div>
+          <div style="display:flex; align-items:center; gap:10px; font-size:15px; color:var(--ink)"><span style="color:var(--gold-dark)">●</span> Gudang di China &amp; Indonesia</div>
+          <div style="display:flex; align-items:center; gap:10px; font-size:15px; color:var(--ink)"><span style="color:var(--gold-dark)">●</span> 20+ Tahun Pengalaman</div>
+          <div style="display:flex; align-items:center; gap:10px; font-size:15px; color:var(--ink)"><span style="color:var(--gold-dark)">●</span> 6+ Kota Gudang Indonesia</div>
+        </div>
+        <a href="https://wa.me/6281234567890?text=Halo%20Fasmart%2C%20saya%20ingin%20konsultasi%20impor%20barang" target="_blank" style="background:var(--ink); color:var(--bg); font-weight:600; font-size:16px; padding:16px 28px; border-radius:999px; display:inline-block">Konsultasi Gratis</a>
+      </div>
+      <div style="background:repeating-linear-gradient(135deg, var(--stripe-1) 0px, var(--stripe-1) 14px, var(--stripe-2) 14px, var(--stripe-2) 28px); border-radius:20px; aspect-ratio:4/3.2; display:flex; align-items:center; justify-content:center; padding:24px">
+        <span style="font-family:'Courier New',monospace; font-size:13px; color:var(--muted-2); text-align:center">foto gudang / kapal kontainer / proses pengiriman</span>
+      </div>
+    </section>
+
+    <section style="background:var(--ink); padding:56px 24px">
+      <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:24px">
+        <sc-for list="{{ keunggulan }}" as="k" hint-placeholder-count="4">
+          <div style="color:var(--bg)">
+            <div style="width:40px; height:4px; background:var(--gold); border-radius:2px; margin-bottom:16px"></div>
+            <div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:18px; margin-bottom:8px">{{ k.title }}</div>
+            <div style="font-size:14px; color:var(--muted-on-dark); line-height:1.5">{{ k.desc }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="max-width:1200px; margin:0 auto; padding:80px 24px">
+      <div style="text-align:center; margin-bottom:48px">
+        <div style="color:var(--gold-dark); font-weight:700; font-size:14px; margin-bottom:8px">PROSES IMPOR</div>
+        <h2 style="font-family:'Poppins',sans-serif; font-size:34px; font-weight:800; margin:0">Cara Kerja Fasmart</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:24px">
+        <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+          <div style="background:var(--alt-bg); border-radius:16px; padding:28px 24px; border:1px solid var(--border)">
+            <div style="font-family:'Poppins',sans-serif; font-size:32px; font-weight:800; color:var(--gold); margin-bottom:12px">{{ s.n }}</div>
+            <div style="font-weight:700; font-size:16px; margin-bottom:8px">{{ s.title }}</div>
+            <div style="font-size:14px; color:var(--muted); line-height:1.5">{{ s.desc }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="background:var(--alt-bg); padding:80px 24px">
+      <div style="max-width:1200px; margin:0 auto">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:40px; flex-wrap:wrap; gap:16px">
+          <h2 style="font-family:'Poppins',sans-serif; font-size:34px; font-weight:800; margin:0">Layanan Kami</h2>
+          <button onClick="{{ setLayanan }}" style="background:transparent; border:none; color:var(--gold-dark); font-weight:600; font-size:15px; cursor:pointer">Lihat semua layanan →</button>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px">
+          <sc-for list="{{ services }}" as="sv" hint-placeholder-count="3">
+            <div style="background:var(--bg); border-radius:16px; padding:32px; border:1px solid var(--border)">
+              <div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:20px; margin-bottom:12px">{{ sv.title }}</div>
+              <div style="font-size:14px; color:var(--muted); line-height:1.6; margin-bottom:16px">{{ sv.desc }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section style="max-width:1200px; margin:0 auto; padding:80px 24px">
+      <div style="text-align:center; margin-bottom:48px">
+        <div style="color:var(--gold-dark); font-weight:700; font-size:14px; margin-bottom:8px">JARINGAN GUDANG</div>
+        <h2 style="font-family:'Poppins',sans-serif; font-size:34px; font-weight:800; margin:0 0 16px">Gudang di China &amp; Indonesia</h2>
+        <p style="color:var(--muted); font-size:16px; max-width:560px; margin:0 auto">Barang dikonsolidasi di gudang China, lalu didistribusikan lewat gudang kami di kota-kota besar Indonesia.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px">
+        <div style="background:var(--ink); border-radius:16px; padding:32px">
+          <div style="color:var(--gold); font-weight:700; font-size:14px; margin-bottom:16px">GUDANG CHINA</div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap">
+            <sc-for list="{{ whCina }}" as="city" hint-placeholder-count="2">
+              <span style="background:var(--gold-tint); color:var(--bg); padding:8px 18px; border-radius:999px; font-size:14px; font-weight:600">{{ city }}</span>
+            </sc-for>
+          </div>
+        </div>
+        <div style="background:var(--alt-bg); border-radius:16px; padding:32px; border:1px solid var(--border)">
+          <div style="color:var(--gold-dark); font-weight:700; font-size:14px; margin-bottom:16px">GUDANG INDONESIA</div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap">
+            <sc-for list="{{ whIndo }}" as="city" hint-placeholder-count="6">
+              <span style="background:var(--bg); color:var(--ink); padding:8px 18px; border-radius:999px; font-size:14px; font-weight:600; border:1px solid var(--border)">{{ city }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background:var(--ink); padding:80px 24px">
+      <div style="max-width:1200px; margin:0 auto">
+        <div style="text-align:center; margin-bottom:48px">
+          <div style="color:var(--gold); font-weight:700; font-size:14px; margin-bottom:8px">TESTIMONI</div>
+          <h2 style="font-family:'Poppins',sans-serif; font-size:34px; font-weight:800; margin:0; color:var(--bg)">Kata Klien Kami</h2>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px">
+          <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
+            <div style="background:var(--dark-alt); border-radius:16px; padding:28px">
+              <div style="color:var(--gold); font-size:20px; margin-bottom:12px">★★★★★</div>
+              <div style="color:var(--quote-text); font-size:15px; line-height:1.6; margin-bottom:20px">“{{ t.quote }}”</div>
+              <div style="color:var(--bg); font-weight:700; font-size:14px">{{ t.name }}</div>
+              <div style="color:var(--muted-2); font-size:13px">{{ t.role }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <dc-import name="KontakSection" hint-size="100%,600px" form="{{ form }}" on-name-change="{{ onNameChange }}" on-phone-change="{{ onPhoneChange }}" on-need-change="{{ onNeedChange }}" on-submit="{{ submitForm }}"></dc-import>
+
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isLayanan }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Layanan">
+    <section style="max-width:1200px; margin:0 auto; padding:64px 24px 40px; text-align:center">
+      <div style="color:var(--gold-dark); font-weight:700; font-size:14px; margin-bottom:8px">LAYANAN</div>
+      <h1 style="font-family:'Poppins',sans-serif; font-size:40px; font-weight:800; margin:0 0 16px">Pengadaan &amp; Impor dari China</h1>
+      <p style="color:var(--muted); font-size:17px; max-width:600px; margin:0 auto">Pilih jalur pengiriman yang sesuai kebutuhan bisnis Anda, atau biarkan kami bantu sourcing barang dari supplier terpercaya.</p>
+    </section>
+
+    <section style="max-width:1200px; margin:0 auto; padding:24px 24px 80px; display:flex; flex-direction:column; gap:24px">
+      <sc-for list="{{ servicesDetail }}" as="sv" hint-placeholder-count="3">
+        <div style="background:var(--alt-bg); border-radius:20px; padding:40px; border:1px solid var(--border); display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:center">
+          <div>
+            <div style="font-family:'Poppins',sans-serif; font-weight:800; font-size:26px; margin-bottom:8px">{{ sv.title }}</div>
+            <div style="color:var(--gold-dark); font-weight:700; font-size:14px; margin-bottom:16px">Estimasi: {{ sv.eta }}</div>
+            <p style="color:var(--muted); font-size:15px; line-height:1.6; margin:0 0 20px">{{ sv.desc }}</p>
+            <a href="https://wa.me/6281234567890?text=Halo%20Fasmart%2C%20saya%20ingin%20konsultasi%20layanan" target="_blank" style="background:var(--ink); color:var(--bg); font-weight:600; font-size:14px; padding:12px 24px; border-radius:999px; display:inline-block">Tanya Layanan Ini</a>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:12px">
+            <sc-for list="{{ sv.points }}" as="p" hint-placeholder-count="3">
+              <div style="display:flex; align-items:flex-start; gap:10px; background:var(--bg); padding:14px 16px; border-radius:12px; border:1px solid var(--border)">
+                <span style="color:var(--gold); font-weight:800; font-size:16px; line-height:1">✓</span>
+                <span style="font-size:14px; color:var(--ink)">{{ p }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </section>
+
+    <section style="background:var(--ink); padding:64px 24px">
+      <div style="max-width:1200px; margin:0 auto">
+        <h2 style="font-family:'Poppins',sans-serif; font-size:28px; font-weight:800; margin:0 0 32px; color:var(--bg); text-align:center">Kenapa Pilih Fasmart</h2>
+        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:24px">
+          <sc-for list="{{ keunggulan }}" as="k" hint-placeholder-count="4">
+            <div style="color:var(--bg)">
+              <div style="width:40px; height:4px; background:var(--gold); border-radius:2px; margin-bottom:16px"></div>
+              <div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:17px; margin-bottom:8px">{{ k.title }}</div>
+              <div style="font-size:14px; color:var(--muted-on-dark); line-height:1.5">{{ k.desc }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <dc-import name="KontakSection" hint-size="100%,600px" form="{{ form }}" on-name-change="{{ onNameChange }}" on-phone-change="{{ onPhoneChange }}" on-need-change="{{ onNeedChange }}" on-submit="{{ submitForm }}"></dc-import>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isTentang }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Tentang Kami">
+    <section style="max-width:1200px; margin:0 auto; padding:64px 24px 40px; display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center">
+      <div>
+        <div style="color:var(--gold-dark); font-weight:700; font-size:14px; margin-bottom:8px">TENTANG KAMI</div>
+        <h1 style="font-family:'Poppins',sans-serif; font-size:38px; font-weight:800; margin:0 0 20px; line-height:1.15">20+ Tahun Membantu Bisnis Impor dari China</h1>
+        <p style="color:var(--muted); font-size:16px; line-height:1.7; margin:0 0 16px">Fasmart adalah penyedia jasa pengadaan dan impor barang dari China, melayani impor via jalur udara maupun laut. Sejak lebih dari dua dekade, kami telah membantu ribuan pelaku usaha di Indonesia menemukan dan mendatangkan barang dari China dengan aman dan efisien.</p>
+        <p style="color:var(--muted); font-size:16px; line-height:1.7; margin:0">Dengan gudang di China dan jaringan gudang yang tersebar di kota-kota besar Indonesia, proses konsolidasi hingga distribusi barang menjadi lebih cepat dan terjangkau.</p>
+      </div>
+      <div style="background:repeating-linear-gradient(135deg, var(--stripe-1) 0px, var(--stripe-1) 14px, var(--stripe-2) 14px, var(--stripe-2) 28px); border-radius:20px; aspect-ratio:4/3.2; display:flex; align-items:center; justify-content:center; padding:24px">
+        <span style="font-family:'Courier New',monospace; font-size:13px; color:var(--muted-2); text-align:center">foto tim / kantor Fasmart</span>
+      </div>
+    </section>
+
+    <section style="background:var(--alt-bg); padding:56px 24px">
+      <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); gap:24px; text-align:center">
+        <div><div style="font-family:'Poppins',sans-serif; font-size:36px; font-weight:800; color:var(--gold-dark)">20+</div><div style="font-size:14px; color:var(--muted)">Tahun Pengalaman</div></div>
+        <div><div style="font-family:'Poppins',sans-serif; font-size:36px; font-weight:800; color:var(--gold-dark)">2</div><div style="font-size:14px; color:var(--muted)">Gudang di China</div></div>
+        <div><div style="font-family:'Poppins',sans-serif; font-size:36px; font-weight:800; color:var(--gold-dark)">6+</div><div style="font-size:14px; color:var(--muted)">Kota Gudang Indonesia</div></div>
+        <div><div style="font-family:'Poppins',sans-serif; font-size:36px; font-weight:800; color:var(--gold-dark)">1000+</div><div style="font-size:14px; color:var(--muted)">Klien Terlayani</div></div>
+      </div>
+    </section>
+
+    <section style="max-width:1200px; margin:0 auto; padding:80px 24px">
+      <h2 style="font-family:'Poppins',sans-serif; font-size:30px; font-weight:800; margin:0 0 40px; text-align:center">Nilai yang Kami Pegang</h2>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:24px">
+        <sc-for list="{{ values }}" as="v" hint-placeholder-count="4">
+          <div style="border:1px solid var(--border); border-radius:16px; padding:24px">
+            <div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:17px; margin-bottom:8px; color:var(--ink)">{{ v.title }}</div>
+            <div style="font-size:14px; color:var(--muted); line-height:1.5">{{ v.desc }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section style="background:var(--ink); padding:64px 24px">
+      <div style="max-width:1200px; margin:0 auto">
+        <div style="text-align:center; margin-bottom:32px">
+          <div style="color:var(--gold); font-weight:700; font-size:14px; margin-bottom:8px">JARINGAN KAMI</div>
+          <h2 style="font-family:'Poppins',sans-serif; font-size:28px; font-weight:800; margin:0; color:var(--bg)">Gudang China &amp; Indonesia</h2>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px">
+          <div>
+            <div style="color:var(--gold); font-weight:700; font-size:13px; margin-bottom:12px">CHINA</div>
+            <div style="display:flex; gap:12px; flex-wrap:wrap">
+              <sc-for list="{{ whCina }}" as="city" hint-placeholder-count="2">
+                <span style="background:var(--gold-tint); color:var(--bg); padding:8px 18px; border-radius:999px; font-size:14px; font-weight:600">{{ city }}</span>
+              </sc-for>
+            </div>
+          </div>
+          <div>
+            <div style="color:var(--gold); font-weight:700; font-size:13px; margin-bottom:12px">INDONESIA</div>
+            <div style="display:flex; gap:12px; flex-wrap:wrap">
+              <sc-for list="{{ whIndo }}" as="city" hint-placeholder-count="6">
+                <span style="background:var(--gold-tint); color:var(--bg); padding:8px 18px; border-radius:999px; font-size:14px; font-weight:600">{{ city }}</span>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <dc-import name="KontakSection" hint-size="100%,600px" form="{{ form }}" on-name-change="{{ onNameChange }}" on-phone-change="{{ onPhoneChange }}" on-need-change="{{ onNeedChange }}" on-submit="{{ submitForm }}"></dc-import>
+  </div>
+  </sc-if>
+
+  <footer style="background:var(--dark-alt); padding:48px 24px 24px">
+    <div style="max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:32px; padding-bottom:32px; border-bottom:1px solid var(--dark-border)">
+      <div>
+        <div style="display:flex; align-items:baseline; gap:2px; margin-bottom:12px">
+          <span style="font-family:'Poppins',sans-serif; font-weight:800; font-size:22px; color:var(--bg)">Fas</span>
+          <span style="font-family:'Poppins',sans-serif; font-weight:800; font-size:22px; color:var(--gold)">mart</span>
+        </div>
+        <p style="color:var(--muted-2); font-size:14px; line-height:1.6; max-width:320px; margin:0">Layanan pengadaan dan impor barang dari China, berpengalaman 20+ tahun. Melayani impor via udara maupun laut dengan gudang di China dan Indonesia.</p>
+      </div>
+      <div>
+        <div style="color:var(--bg); font-weight:700; font-size:14px; margin-bottom:16px">Halaman</div>
+        <div style="display:flex; flex-direction:column; gap:10px">
+          <button onClick="{{ setHome }}" style="background:none; border:none; color:var(--muted-on-dark); font-size:14px; text-align:left; cursor:pointer; padding:0">Home</button>
+          <button onClick="{{ setLayanan }}" style="background:none; border:none; color:var(--muted-on-dark); font-size:14px; text-align:left; cursor:pointer; padding:0">Layanan</button>
+          <button onClick="{{ setTentang }}" style="background:none; border:none; color:var(--muted-on-dark); font-size:14px; text-align:left; cursor:pointer; padding:0">Tentang Kami</button>
+        </div>
+      </div>
+      <div>
+        <div style="color:var(--bg); font-weight:700; font-size:14px; margin-bottom:16px">Kontak</div>
+        <div style="display:flex; flex-direction:column; gap:10px; color:var(--muted-on-dark); font-size:14px">
+          <a href="https://wa.me/6281234567890" target="_blank" style="color:var(--muted-on-dark)">WhatsApp: +62 812-3456-7890</a>
+          <a href="mailto:[email protected]" style="color:var(--muted-on-dark)">[email protected]</a>
+          <span>Jakarta, Indonesia</span>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1200px; margin:0 auto; padding-top:20px; color:var(--muted-3); font-size:13px; text-align:center">© 2026 Fasmart. Seluruh hak cipta dilindungi.</div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;theme&quot;: {&quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;emas&quot;, &quot;options&quot;: [&quot;emas&quot;, &quot;navy&quot;, &quot;merah&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Tema Warna&quot;}}">
+const THEMES = {
+  emas: { ink:'#171717', gold:'#F1C243', 'gold-dark':'#D99E16', bg:'#FFFDF7', 'alt-bg':'#F8E8A6', border:'#E2E4E8', muted:'#667085', 'muted-2':'#98A0AF', 'muted-on-dark':'#B5B9C2', 'dark-alt':'#232323', 'dark-border':'#3A3A3A', 'muted-3':'#6E7480', 'quote-text':'#D6D6D6', 'stripe-1':'#F5EFD9', 'stripe-2':'#EDE3C0', 'header-bg':'rgba(255,253,247,0.95)', 'gold-tint':'rgba(241,194,67,0.18)' },
+  navy: { ink:'#172A46', gold:'#F1C243', 'gold-dark':'#D99E16', bg:'#FFFDF7', 'alt-bg':'#E9EDF3', border:'#D7DCE5', muted:'#667085', 'muted-2':'#98A0AF', 'muted-on-dark':'#AAB4CC', 'dark-alt':'#20334F', 'dark-border':'#37496B', 'muted-3':'#6E7480', 'quote-text':'#D7DCE8', 'stripe-1':'#E9EDF3', 'stripe-2':'#DAE1EC', 'header-bg':'rgba(255,253,247,0.95)', 'gold-tint':'rgba(241,194,67,0.18)' },
+  merah: { ink:'#7A1F1F', gold:'#F1C243', 'gold-dark':'#D99E16', bg:'#FFFDF7', 'alt-bg':'#F7E5DC', border:'#EAD9C8', muted:'#6B4A42', 'muted-2':'#A3877A', 'muted-on-dark':'#D9B8AE', 'dark-alt':'#8F2A28', 'dark-border':'#A8433D', 'muted-3':'#8A5C52', 'quote-text':'#EAD0C7', 'stripe-1':'#F5E6DA', 'stripe-2':'#EAD4C0', 'header-bg':'rgba(255,253,247,0.95)', 'gold-tint':'rgba(241,194,67,0.2)' }
+};
+
+class Component extends DCLogic {
+  state = { activePage: 'home', form: { name: '', phone: '', need: '' }, scrolled: false };
+
+  componentDidMount() {
+    this.onScroll = () => {
+      const scrolled = window.scrollY > 8;
+      if (scrolled !== this.state.scrolled) this.setState({ scrolled });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+  }
+
+  setPage = (page) => this.setState({ activePage: page });
+  onNameChange = (e) => this.setState(s => ({ form: { ...s.form, name: e.target.value } }));
+  onPhoneChange = (e) => this.setState(s => ({ form: { ...s.form, phone: e.target.value } }));
+  onNeedChange = (e) => this.setState(s => ({ form: { ...s.form, need: e.target.value } }));
+
+  submitForm = () => {
+    const { name, phone, need } = this.state.form;
+    const msg = `Halo Fasmart, saya ${name} (${phone}). Kebutuhan: ${need}`;
+    window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(msg)}`, '_blank');
+  };
+
+  navStyle(active) {
+    return {
+      background: 'none', border: 'none', cursor: 'pointer', fontSize: '15px',
+      fontWeight: active ? 700 : 600, color: active ? 'var(--ink)' : 'var(--muted)',
+      borderBottom: active ? '2px solid var(--gold)' : '2px solid transparent', paddingBottom: '4px'
+    };
+  }
+
+  renderVals() {
+    const { activePage, form, scrolled } = this.state;
+    const headerStyle = {
+      position: 'sticky', top: 0, zIndex: 50,
+      background: scrolled ? 'var(--header-bg)' : 'transparent',
+      backdropFilter: scrolled ? 'blur(6px)' : 'none',
+      boxShadow: scrolled ? '0 4px 16px rgba(0,0,0,0.08)' : 'none',
+      borderBottom: scrolled ? '1px solid rgba(0,0,0,0.06)' : '1px solid transparent',
+      transition: 'background 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease'
+    };
+    const palette = THEMES[this.props.theme] || THEMES.emas;
+    const themeVarsCss = Object.entries(palette).map(([k, v]) => `--${k}:${v};`).join('');
+    return {
+      themeVarsCss,
+      headerStyle,
+      isHome: activePage === 'home',
+      isLayanan: activePage === 'layanan',
+      isTentang: activePage === 'tentang',
+      setHome: () => this.setPage('home'),
+      setLayanan: () => this.setPage('layanan'),
+      setTentang: () => this.setPage('tentang'),
+      navHomeStyle: this.navStyle(activePage === 'home'),
+      navLayananStyle: this.navStyle(activePage === 'layanan'),
+      navTentangStyle: this.navStyle(activePage === 'tentang'),
+      form,
+      onNameChange: this.onNameChange,
+      onPhoneChange: this.onPhoneChange,
+      onNeedChange: this.onNeedChange,
+      submitForm: this.submitForm,
+      keunggulan: [
+        { title: '20+ Tahun Pengalaman', desc: 'Melayani impor dari China sejak lebih dari dua dekade.' },
+        { title: 'Gudang China & Indonesia', desc: 'Jaringan gudang di China dan kota-kota besar Indonesia.' },
+        { title: 'Udara & Laut', desc: 'Fleksibel pilih jalur pengiriman sesuai kebutuhan dan budget.' },
+        { title: 'Tim Respon Cepat', desc: 'Konsultasi dan update status kiriman kapan saja.' }
+      ],
+      steps: [
+        { n: '01', title: 'Konsultasi & Sourcing', desc: 'Sampaikan barang yang dicari, tim kami bantu cari supplier terbaik di China.' },
+        { n: '02', title: 'Pembelian & Konsolidasi', desc: 'Barang dibeli dan dikonsolidasi di gudang kami di China.' },
+        { n: '03', title: 'Pengiriman Udara/Laut', desc: 'Barang dikirim sesuai jalur pilihan Anda, udara atau laut.' },
+        { n: '04', title: 'Tiba di Gudang Indonesia', desc: 'Proses clearance lalu didistribusikan dari gudang terdekat.' }
+      ],
+      services: [
+        { title: 'Impor via Laut', desc: 'Solusi hemat biaya untuk volume besar, estimasi 3-5 minggu.' },
+        { title: 'Impor via Udara', desc: 'Lebih cepat, ideal untuk barang mendesak, estimasi 3-7 hari.' },
+        { title: 'Jasa Pengadaan & Sourcing', desc: 'Bantu cari, nego, dan beli barang langsung dari supplier di China.' }
+      ],
+      servicesDetail: [
+        { title: 'Impor via Laut', eta: '3-5 minggu', desc: 'Solusi hemat biaya untuk pengiriman volume besar atau berat. Cocok untuk stok toko dan kebutuhan rutin.', points: ['Minimal pengiriman 0,1 CBM', 'Cocok untuk kiriman besar & berat', 'Biaya lebih terjangkau per kg/CBM'] },
+        { title: 'Impor via Udara', eta: '3-7 hari', desc: 'Pengiriman cepat untuk barang mendesak atau bernilai tinggi dengan berat lebih ringan.', points: ['Estimasi jauh lebih cepat', 'Cocok barang ringan & mendesak', 'Tracking status real-time'] },
+        { title: 'Jasa Pengadaan & Sourcing', eta: '2-5 hari kerja', desc: 'Kami bantu cari dan negosiasi langsung dengan supplier atau pabrik di China sebelum barang dikirim.', points: ['Riset & rekomendasi supplier', 'Quality control sebelum kirim', 'Nego harga terbaik'] }
+      ],
+      values: [
+        { title: 'Terpercaya', desc: 'Dibangun dari pengalaman 20+ tahun melayani klien.' },
+        { title: 'Transparan', desc: 'Biaya dan proses jelas tanpa biaya tersembunyi.' },
+        { title: 'Responsif', desc: 'Tim siap membantu konsultasi dan update kiriman.' },
+        { title: 'Efisien', desc: 'Jaringan gudang mempercepat proses distribusi.' }
+      ],
+      testimonials: [
+        { name: 'Budi Santoso', role: 'Pemilik Toko Elektronik, Jakarta', quote: 'Sudah 5 tahun pakai Fasmart, barang selalu aman dan tepat waktu.' },
+        { name: 'Sinta Wijaya', role: 'Reseller Fashion, Surabaya', quote: 'Proses impor jadi jauh lebih simpel, tim nya juga responsif banget.' },
+        { name: 'Andi Prasetyo', role: 'Owner UKM, Medan', quote: 'Harga transparan, tidak ada biaya tersembunyi. Sangat direkomendasikan.' }
+      ],
+      whCina: ['Guangzhou', 'Yiwu'],
+      whIndo: ['Jakarta', 'Surabaya', 'Semarang', 'Medan', 'Makassar', 'Denpasar']
+    };
+  }
+}
+</script>
+</body>
+</html>

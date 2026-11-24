@@ -1,0 +1,8 @@
+# Agent and MCP cache directories
+.gemini/
+.impeccable/
+.playwright-mcp/
+
+# OS metadata
+Thumbs.db
+.DS_Store
